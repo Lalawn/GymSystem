@@ -16,4 +16,14 @@ Route::get('/api/events', [EventController::class, 'getEvents']);
 
 Auth::routes();
 
+Route::get('/my-events', [EventController::class, 'myRegisteredEvents'])->name('events.myEvents');
+
+Route::get('/events',[EventController::class, 'index'])->name('events.index');
+
+Route::post('/events/{event}/signup', [EventController::class, 'signup'])->name('events.signup');
+
+Route::delete('/events/{event}/cancel', [EventController::class, 'cancel'])->name('events.cancel');
+
+
+
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

@@ -39,9 +39,18 @@
                             </li>
                         @endif
                     @else
+                        <!-- New Navigation Buttons -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('events.index') }}">All Events</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('events.myEvents') }}">My Events</a>
+                        </li>
+                        <!-- User Info -->
                         <li class="nav-item">
                             <span class="navbar-text mr-3">{{ Auth::user()->name }}</span>
                         </li>
+                        <!-- Logout -->
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('logout') }}"
                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
@@ -60,6 +69,18 @@
     <!-- Main Content -->
     <main class="py-4">
         @yield('content')
+
+        @if(session('success'))
+            <div class="alert alert-success">
+                {{ session('success') }}
+            </div>
+        @endif
+        @if(session('error'))
+            <div class="alert alert-danger">
+                {{ session('error') }}
+            </div>
+        @endif
+
     </main>
 </div>
 
