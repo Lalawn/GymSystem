@@ -20,6 +20,6 @@ class RolesSeeder extends Seeder
             (new Role())->firstOrCreate($role);
         }
 
-
+        
     }
 }

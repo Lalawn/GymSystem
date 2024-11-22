@@ -4,6 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Event extends Model
 {
@@ -12,6 +15,7 @@ class Event extends Model
     protected $fillable = [
         'name',
         'event_date',
+        'description'
     ];
 
     protected $casts = [
@@ -20,4 +24,17 @@ class Event extends Model
 
     protected $dates = ['event_date'];
 
+    public function author(): belongsTo
+    {
+        return $this->belongsTo(User::class, 'author_id');
+    }
+    public function trainer(): belongsTo
+    {
+        return $this->belongsTo(User::class, 'trainer_id');
+    }
+
+    public function registeredUsers(): BelongsToMany
+    {
+        return $this->belongsToMany(User::class, 'registered_events');
+    }
 }
