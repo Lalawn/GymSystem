@@ -14,8 +14,10 @@ class Event extends Model
 
     protected $fillable = [
         'name',
+        'description',
         'event_date',
-        'description'
+        'author_id',
+        'trainer_id',
     ];
 
     protected $casts = [

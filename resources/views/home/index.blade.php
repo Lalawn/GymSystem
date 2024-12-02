@@ -10,7 +10,7 @@
             @guest
             <a class="btn btn-primary btn-lg" href="{{route('login')}}" role="button">Login</a>
             @else
-                <a class="btn btn-primary btn-lg" href="{{route('calendar')}}" role="button">Check Calendar</a>
+                <a class="btn btn-primary btn-lg" href="{{route('events.index')}}" role="button">Check Events</a>
             @endif
         </div>
 
