@@ -27,7 +27,6 @@ class BotController extends Controller
         $this->telegram = $telegram;
 
         $response = $telegram->sendMessage([
-            'chat_id' => 6703560873,
             'text' => ('Hello World')
         ]);
 
