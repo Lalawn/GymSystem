@@ -2,8 +2,6 @@
 
 return [
 
-    'telegram_chat_id' => env('TELEGRAM_CHAT_ID', 'default_value'),
-
     /*
     |--------------------------------------------------------------------------
     | Application Name
